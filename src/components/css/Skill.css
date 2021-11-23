@@ -1,0 +1,14 @@
+.skillBox {
+  border: 1px solid white;
+  padding: 50px;
+}
+
+.skillBox div {
+  border: 1px solid white;
+}
+
+.skill-logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
