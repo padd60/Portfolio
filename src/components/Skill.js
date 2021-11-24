@@ -4,11 +4,11 @@ import "./css/Skill.css";
 import { Image } from "react-bootstrap";
 import styled from "styled-components";
 
-let Title = styled("div")`
+let Title = styled("h1")`
   font-size: 48px;
   font-weight: bold;
   padding: 30px 0;
-  color: #f2ceae;
+  color: #009dae;
 `;
 
 const Skill = () => {

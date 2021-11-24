@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Skill from "./components/Skill.js";
-import About from "./components/About";
+import About from "./components/About.js";
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
       <div className="App">
         <Navbar className="navbar" variant="dark" expand="lg" sticky="top">
           <Container>
-            <Navbar.Brand href="#home">Welcome My Page!</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              Welcome My Page!
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse
               id="basic-navbar-nav"
