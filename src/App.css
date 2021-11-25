@@ -1,10 +1,11 @@
 .App {
   text-align: center;
-  background-color: #404040;
-  color: white;
+  background-color: white;
+  color: #404040;
   font-family: "Do Hyeon", sans-serif;
 }
 
 .navbar {
-  background-color: #404040;
+  background-color: white;
+  color: #404040;
 }

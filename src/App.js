@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter basename="/Portfolio">
       <div className="App">
-        <Navbar className="navbar" variant="dark" expand="lg" sticky="top">
+        <Navbar className="navbar" variant="light" expand="lg" sticky="top">
           <Container>
             <Navbar.Brand as={Link} to="/">
               Welcome My Page!
