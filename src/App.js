@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Skill from "./components/Skill.js";
 import About from "./components/About.js";
+import Contact from "./components/Contact.js";
 
 function App() {
   return (
@@ -21,16 +22,38 @@ function App() {
               style={{ justifyContent: "flex-end" }}
             >
               <Nav className="move_bar">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link
+                  as={Link}
+                  to="/"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                  }}
+                >
                   About Me
                 </Nav.Link>
-                <Nav.Link as={Link} to="/skill">
+                <Nav.Link
+                  onClick={() => {
+                    window.scrollTo({ top: 1365, left: 0, behavior: "smooth" });
+                  }}
+                >
                   Tech Skills
                 </Nav.Link>
-                <Nav.Link as={Link} to="#link">
+                <Nav.Link
+                  onClick={() => {
+                    window.scrollTo({ top: 2360, left: 0, behavior: "smooth" });
+                  }}
+                >
                   Projects
                 </Nav.Link>
-                <Nav.Link as={Link} to="#link">
+                <Nav.Link
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 3810,
+                      left: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
                   Contact Me
                 </Nav.Link>
               </Nav>
@@ -41,6 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<About />} />
           <Route path="/skill" element={<Skill />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </BrowserRouter>
