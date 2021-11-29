@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
-import logo from "../logo.svg";
+import React, { useState } from "react";
 import styled from "styled-components";
-import profile from "../images/profile.png";
-import { Image } from "react-bootstrap";
 import "./css/About.css";
-import { FaReact, FaCss3, FaVimeoSquare, FaGithubSquare } from "react-icons/fa";
+import {
+  FaReact,
+  FaCss3,
+  FaVimeoSquare,
+  FaGithubSquare,
+  FaArrowCircleUp,
+} from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FiMoreVertical } from "react-icons/fi";
 import Circle from "react-circle";
@@ -107,10 +110,26 @@ let MoreButton = styled("button")`
   color: white;
 `;
 
+let TopBtn = styled("button")`
+  opacity: ${(props) => {
+    return props.opacity;
+  }};
+  transition: all 1s;
+  border-style: none;
+  background-color: transparent;
+  color: #3fc1c9;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  font-size: 38px;
+`;
+
 const About = () => {
   let [circleNum, circleNumChange] = useState(0);
   let [circleNum2, circleNumChange2] = useState(0);
   let [circleNum3, circleNumChange3] = useState(0);
+
+  let [opacity, opacityChange] = useState(0);
 
   window.addEventListener("scroll", () => {
     let scroll = window.scrollY;
@@ -126,6 +145,14 @@ const About = () => {
       circleNumChange(0);
       circleNumChange2(0);
       circleNumChange3(0);
+    }
+
+    if (scroll > 1800) {
+      opacityChange(100);
+    }
+
+    if (scroll <= 1800) {
+      opacityChange(0);
     }
   });
 
@@ -441,8 +468,16 @@ const About = () => {
       >
         더보기
       </MoreButton>
-
       {/* contact me end */}
+
+      <TopBtn
+        opacity={opacity}
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }}
+      >
+        <FaArrowCircleUp />
+      </TopBtn>
     </div>
   );
 };
