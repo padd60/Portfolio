@@ -40,7 +40,7 @@ function App() {
                 </Nav.Link>
                 <Nav.Link
                   onClick={() => {
-                    window.scrollTo({ top: 2360, left: 0, behavior: "smooth" });
+                    window.scrollTo({ top: 2160, left: 0, behavior: "smooth" });
                   }}
                 >
                   Projects

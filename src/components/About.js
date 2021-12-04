@@ -12,6 +12,10 @@ import { SiJavascript } from "react-icons/si";
 import { FiMoreVertical } from "react-icons/fi";
 import Circle from "react-circle";
 import { useNavigate } from "react-router";
+import Project1 from "../images/project1.png";
+import Project2 from "../images/project2.png";
+import Project5 from "../images/project5.png";
+import Project4 from "../images/project4.png";
 
 let ProfileBox = styled("div")`
   margin: 50px 50px 0;
@@ -78,21 +82,31 @@ let SubTitle = styled("h3")`
 
 let SkillBox = styled("div")`
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-flow: column wrap;
   color: #364f6b;
   width: 200px;
-  height: 300px;
   margin: 20px auto;
   border-radius: 30px;
 `;
 
 let ProjectBox = styled("div")`
   width: 400px;
-  height: 300px;
+  min-height: 300px;
   border: 3px solid #364f6b;
   border-radius: 20px;
   margin: 50px 0px;
+`;
+
+let ProjectImg = styled("div")`
+  width: 360px;
+  min-height: 200px;
+  margin: 5px auto;
+  border: 1px solid #364f6b;
+  background-color: #364f6b;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
 `;
 
 let Line = styled("div")`
@@ -122,6 +136,16 @@ let TopBtn = styled("button")`
   bottom: 40px;
   right: 40px;
   font-size: 38px;
+`;
+
+let StackBar = styled("span")`
+  display: inline-block;
+  width: 70px;
+  height: 25px;
+  border-radius: 8px;
+  margin: 1px 1px;
+  background-color: #364f6b;
+  color: white;
 `;
 
 const About = () => {
@@ -225,7 +249,6 @@ const About = () => {
                   }}
                 />
               </div>
-              <div>React는 어쩌구 저쩌구</div>
             </SkillBox>
           </div>
           <div className="col-md-3">
@@ -256,7 +279,6 @@ const About = () => {
                   }}
                 />
               </div>
-              <div>Java Script는 어쩌구 저쩌구</div>
             </SkillBox>
           </div>
           <div className="col-md-3">
@@ -287,7 +309,6 @@ const About = () => {
                   }}
                 />
               </div>
-              <div>CSS는 어쩌구 저쩌구</div>
             </SkillBox>
           </div>
         </div>
@@ -316,7 +337,30 @@ const About = () => {
             id="Project1"
             className="col d-flex justify-content-start align-items-center"
           >
-            <ProjectBox>프로젝트 1</ProjectBox>
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open("https://padd60.github.io/FashionApp_project/");
+                }}
+              >
+                <img
+                  src={Project1}
+                  alt="pjImg1"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <StackBar>Html</StackBar>
+              <StackBar>CSS</StackBar>
+              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+              <StackBar>jQuery</StackBar>
+            </ProjectBox>
             <Line />
           </div>
           <div
@@ -324,13 +368,61 @@ const About = () => {
             className="col d-flex justify-content-end align-items-center"
           >
             <Line />
-            <ProjectBox>프로젝트 2</ProjectBox>
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open(
+                    "https://padd60.github.io/js-crome-app-momentum-/"
+                  );
+                }}
+              >
+                <img
+                  src={Project2}
+                  alt="pjImg2"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <StackBar>Html</StackBar>
+              <StackBar>CSS</StackBar>
+              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+              <StackBar style={{ width: "90px" }}>Open API</StackBar>
+            </ProjectBox>
           </div>
           <div
             id="Project3"
             className="col d-flex justify-content-start align-items-center"
           >
-            <ProjectBox>프로젝트 3</ProjectBox>
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open("https://padd60.github.io/Apple_Demo_Site/");
+                }}
+              >
+                <img
+                  src={Project5}
+                  alt="pjImg5"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <StackBar>HTML</StackBar>
+              <StackBar>CSS</StackBar>
+              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+              <StackBar style={{ width: "90px" }}>Bootstrap</StackBar>
+            </ProjectBox>
             <Line />
           </div>
           <div
@@ -338,7 +430,37 @@ const About = () => {
             className="col d-flex justify-content-end align-items-center"
           >
             <Line />
-            <ProjectBox>프로젝트 4</ProjectBox>
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open(
+                    "https://padd60.github.io/React_ShoppingMall_Demo/"
+                  );
+                }}
+              >
+                <img
+                  src={Project4}
+                  alt="pjImg4"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <div style={{ marginBottom: "20px" }}>
+                <StackBar>HTML</StackBar>
+                <StackBar>CSS</StackBar>
+                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+                <StackBar>React</StackBar>
+                <StackBar>Redux</StackBar>
+                <StackBar>Sass</StackBar>
+                <StackBar style={{ width: "130px" }}>react-bootstrap</StackBar>
+              </div>
+            </ProjectBox>
           </div>
         </div>
         <div>
