@@ -7,9 +7,12 @@ import {
   FaVimeoSquare,
   FaGithubSquare,
   FaArrowCircleUp,
+  FaBirthdayCake,
 } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FiMoreVertical } from "react-icons/fi";
+import { IoLocationSharp } from "react-icons/io5";
+import { RiMacbookFill } from "react-icons/ri";
 import Circle from "react-circle";
 import { useNavigate } from "react-router";
 import Project1 from "../images/project1.png";
@@ -53,12 +56,15 @@ let Title = styled("h1")`
 `;
 
 let InfoLi = styled("div")`
-  height: 200px;
+  height: 100px;
   margin-bottom: 50px;
 `;
 
 let InfoMain = styled("p")`
-  height: 200px;
+  font-size: 16px;
+  text-align: left;
+  border-top: 3px solid #ff2e63;
+  padding-top: 30px;
 `;
 
 let Strong = styled("span")`
@@ -159,13 +165,13 @@ const About = () => {
     let scroll = window.scrollY;
     console.log(scroll);
 
-    if (scroll >= 1200) {
+    if (scroll >= 1100) {
       circleNumChange(65);
       circleNumChange2(75);
       circleNumChange3(70);
     }
 
-    if (scroll < 1200) {
+    if (scroll < 1100) {
       circleNumChange(0);
       circleNumChange2(0);
       circleNumChange3(0);
@@ -204,12 +210,43 @@ const About = () => {
       <Title>About Me!</Title>
       <div className="container">
         <div className="row justify-content-md-around">
-          <InfoLi className="col-md-3">Live In</InfoLi>
-          <InfoLi className="col-md-3">MBTI</InfoLi>
-          <InfoLi className="col-md-3">Using Device</InfoLi>
+          <InfoLi className="col-md-3">
+            <IoLocationSharp style={{ fontSize: "32px", color: "#ff2e63" }} />
+            <p style={{ fontSize: "24px", color: "#ff2e63" }}>Live In</p>
+            <p style={{ fontSize: "24px" }}>Seoul, Korea</p>
+          </InfoLi>
+          <InfoLi className="col-md-3">
+            <FaBirthdayCake style={{ fontSize: "32px", color: "#ff2e63" }} />
+            <p style={{ fontSize: "24px", color: "#ff2e63" }}>Age</p>
+            <p style={{ fontSize: "24px" }}>1995.08.02</p>
+          </InfoLi>
+          <InfoLi className="col-md-3">
+            <RiMacbookFill style={{ fontSize: "32px", color: "#ff2e63" }} />
+            <p style={{ fontSize: "24px", color: "#ff2e63" }}>Using Device</p>
+            <p style={{ fontSize: "24px" }}>MacBook, M1</p>
+          </InfoLi>
         </div>
         <div className="row justify-content-center">
-          <InfoMain>여기에 자기소개글 쓰기</InfoMain>
+          <div className="col-10">
+            <InfoMain>
+              웹 프론트엔드 프로그래머를 꿈꾸는 개발자입니다. 1년정도 전혀 다른
+              직업을 가지고 사회생활을 시작하였지만, 트렌디하게 변화하는 시장과
+              그에 맞추어 발 빠르게 적용되는 최신 기술이 모여있는 IT산업에 대한
+              관심이 커져 커리어 전환을 하게되었습니다. 제일 매료되었던 부분은
+              시장에서 한단계 더 성장할 수 있는 신기술과 기술공유가 활발하게
+              이루어져 자신이 성장할 기회가 얼마든지 있고 또 회사의 성장과도
+              직결될 수 있다는 점입니다. 특히 웹에서 프론트엔드 영역은 트렌드가
+              빠르게 변화하고 있어 배워서 적용해볼 수 있는 부분이 많아 관심이
+              갔습니다. 또한, 개발을 하면서 바로 사용자의 입장에서 UI를 조작,
+              확인하며 코딩할 수 있다는 점이 줄곧 사용자의 입장에서만 있었던
+              저에게 신선하게 다가와 진로를 프론트엔드 개발자로 정하게
+              되었습니다. 앞으로의 목표가 있다면 사용자 친화적인 UI 설계를
+              기반으로 하는 풀스택 개발자가 되는 것입니다. 이를 위해서
+              프로젝트에서 프론트엔드 담당을 하되 PM 역할을 자처하여 벡엔드와의
+              통합적인 설계에도 관심을 가지고 전체적인 구조를 이해하고
+              프로젝트를 이끌어가려 노력하고 있습니다.
+            </InfoMain>
+          </div>
         </div>
       </div>
 
