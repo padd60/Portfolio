@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
