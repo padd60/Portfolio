@@ -14,6 +14,7 @@ const Project = () => {
         "애플 메인페이지를 클론한 사이트로 부트스트랩을 최대한으로 사용해 간단하게 구현해본 사이트입니다.",
       src: "/images/project5.png",
       url: "https://padd60.github.io/Apple_Demo_Site/",
+      skill: "JavaScript, Bootstrap, CSS, HTML",
     },
     {
       title: "Shoe Shopping Mall",
@@ -22,6 +23,8 @@ const Project = () => {
         "리액트와 로컬스토리지로 구현한 간단한 쇼핑몰 데모 사이트로 제품 상세페이지에서 주문을 누르면 재고가 감소하고 주문목록으로 이동하며 각 주문된 목록의 갯수도 수정이 가능합니다. 또한, 로컬스토리지에 접속한 사용자가 본 상품의 번호를 기억해 최근 봤던 상품을 보여줄 수 있습니다.",
       src: "/images/project4.png",
       url: "https://padd60.github.io/React_ShoppingMall_Demo/",
+      skill:
+        "React, Redux, Saas, react-bootstrap, JavaScript, jQuery, CSS, HTML",
     },
     {
       title: "학사관리 SW",
@@ -30,6 +33,7 @@ const Project = () => {
         "자바 스윙으로 만든 간단한 학사관리시스템입니다. MySQL과 연동하여 로그인, 학생목록, 대출 도서 목록을 가져오거나 수정, 등록, 삭제할 수 있고 간단한 카테고리별 검색도 가능합니다.",
       src: "/images/project3.png",
       url: "https://www.youtube.com/watch?v=_lq_UEThAG4&t=11s",
+      skill: "Java, Swing",
     },
     {
       title: "Momentom Clone",
@@ -38,6 +42,7 @@ const Project = () => {
         "크롬의 생산성 웹 중 하나인 Momentum을 클론하여 만든 사이트입니다. Open API를 사용해 접속한 유저의 위치정보를 기반으로 현재 날씨를 알려주고 간단한 To Do List를 작성할 수 있는 사이트입니다. 또한, 로컬스토리지를 사용하여 접속 유저가 닉네임을 입력하여 저장하면 다음에 접속 시 유저명을 표기해줍니다.",
       src: "/images/project2.png",
       url: "https://padd60.github.io/js-crome-app-momentum-/",
+      skill: "JavaScript, jQuery, OpenAPI, CSS, HTML",
     },
     {
       title: "FashionBrand Store",
@@ -46,10 +51,11 @@ const Project = () => {
         "신생 패션 브랜드를 모아서 사용자에게 알려주고 트렌드에 따라 추천해주는 사이트로 유저풀이 커지면 브랜드를 입점하는 방식으로 바꾸어 사이트에서 해당 브랜드의 자체 쇼핑몰로 연결해주거나 상품을 보여주어 결제하게 하여 수수료를 부과해 수익을 내는 비즈니스 모델을 생각하여 만든 데모 사이트입니다.",
       src: "/images/project1.png",
       url: "https://padd60.github.io/FashionApp_project/",
+      skill: "JavaScript, jQuery, CSS, HTML",
     },
   ];
 
-  let [detailIndex, SetdetailIndex] = useState(0);
+  let [detailIndex, SetdetailIndex] = useState(4);
 
   // styled components
   let Divide = styled("div")`

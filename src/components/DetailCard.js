@@ -53,6 +53,19 @@ const DetailCard = (props) => {
           </ShowDetail>
         </div>
       </div>
+      <div className="container" style={{ marginBottom: "30px" }}>
+        <div className="row justify-content-center">
+          <ShowDetail className="col-lg-3">
+            <DetailHead>프로젝트 적용기술 : </DetailHead>
+          </ShowDetail>
+
+          <ShowDetail className="col-lg-7">
+            <DetailBody>
+              {props.projectInfo ? props.projectInfo.skill : null}
+            </DetailBody>
+          </ShowDetail>
+        </div>
+      </div>
       <Button
         style={{
           backgroundColor: "#F6416C",
