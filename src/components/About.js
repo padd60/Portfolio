@@ -15,10 +15,6 @@ import { IoLocationSharp } from "react-icons/io5";
 import { RiMacbookFill } from "react-icons/ri";
 import Circle from "react-circle";
 import { useNavigate } from "react-router";
-import Project1 from "../images/project1.png";
-import Project2 from "../images/project2.png";
-import Project5 from "../images/project5.png";
-import Project4 from "../images/project4.png";
 
 let ProfileBox = styled("div")`
   margin: 50px 50px 0;
@@ -382,7 +378,7 @@ const About = () => {
                 }}
               >
                 <img
-                  src={Project1}
+                  src={process.env.PUBLIC_URL + "/images/project1.png"}
                   alt="pjImg1"
                   style={{
                     display: "block",
@@ -415,7 +411,7 @@ const About = () => {
                 }}
               >
                 <img
-                  src={Project2}
+                  src={process.env.PUBLIC_URL + "/images/project2.png"}
                   alt="pjImg2"
                   style={{
                     display: "block",
@@ -444,7 +440,7 @@ const About = () => {
                 }}
               >
                 <img
-                  src={Project5}
+                  src={process.env.PUBLIC_URL + "/images/project5.png"}
                   alt="pjImg5"
                   style={{
                     display: "block",
@@ -477,7 +473,7 @@ const About = () => {
                 }}
               >
                 <img
-                  src={Project4}
+                  src={process.env.PUBLIC_URL + "/images/project4.png"}
                   alt="pjImg4"
                   style={{
                     display: "block",
