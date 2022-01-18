@@ -15,6 +15,8 @@ import { IoLocationSharp } from "react-icons/io5";
 import { RiMacbookFill } from "react-icons/ri";
 import Circle from "react-circle";
 import { useNavigate } from "react-router";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 let ProfileBox = styled("div")`
   margin: 50px 50px 0;
@@ -186,6 +188,55 @@ const About = () => {
 
   return (
     <div>
+      <Navbar className="navbar" variant="light" expand="lg" sticky="top">
+        <Container>
+          <Navbar.Brand as={Link} to="/">
+            Welcome My Page!
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse
+            id="basic-navbar-nav"
+            style={{ justifyContent: "flex-end" }}
+          >
+            <Nav className="move_bar">
+              <Nav.Link
+                as={Link}
+                to="/"
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+              >
+                About Me
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => {
+                  window.scrollTo({ top: 1365, left: 0, behavior: "smooth" });
+                }}
+              >
+                Tech Skills
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => {
+                  window.scrollTo({ top: 2160, left: 0, behavior: "smooth" });
+                }}
+              >
+                Projects
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => {
+                  window.scrollTo({
+                    top: 3810,
+                    left: 0,
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                Contact Me
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <div className="container-lg">
         <ProfileBox>
           <div className="row justify-content-around">
