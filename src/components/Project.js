@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import DetailCard from "./DetailCard";
 import { Container, Nav, Navbar } from "react-bootstrap";
@@ -6,7 +6,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Project = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   let projectInfo = [
+    {
+      title: "How Much",
+      subtitle: "리액트 + 스프링 커뮤니티 사이트",
+      content:
+        "사용자의 어떤 사소한 아이디어나 웃긴 경험, 생각, 정말 가치가 궁금한 물건 등등을 포스팅하여 사람들에게 공유해 서로 가치를 평가해주고 생각을 주고 받는 커뮤니티로 평가종료 시 매겨진 평균가격은 서버에 지정해둔 로직에 의해 포인트로 환산하여 해당 유저에게 주어집니다. 이 포인트를 이용해 현재는 개인의 등급만을 올릴 수 있지만, 이후 확장을 하면 해당 포인트로 제휴업체에서 사용하거나 기프티콘으로 변환할 수 있도록하여 사용자를 늘리고 활성화가 되면 사이트 내에서 해당 평가 물건을 실거래할 수 있게끔 만들 계획을 가지고 설계를 진행했습니다. 이 프로젝트는 리액트와 스프링으로 구현한 프론트, 백을 완전히 분리한 웹사이트이며 기본적으로 비동기적통신을 통해 데이터를 JSON 형태로 주고 받습니다. 프론트에서는 리덕스로 state를 공통관리하고 axios를 통해 API를 사용합니다. 백에서는 스프링시큐리티를 사용해 사용자 정보를 관리하고 비밀번호를 암호화해 저장하고 Mybatis를 사용해 MySQL에 연결하여 데이터를 조작합니다. local 환경에서 리액트 기본서버와 스프링에서 사용된 Tomcat서버의 포트번호가 다르므로 CORS오류를 잡기 위해 proxy와 @CrossOrigin 어노테이션을 사용했습니다. 또한, 이미지 저장 및 반환을 간편하게 해결하기 위해 base64를 사용해 문자열로 저장하고 img태그에서 다시 변환해 화면에 보여주는 방식을 적용했습니다.",
+      src: "/images/project6.png",
+      url: "https://www.youtube.com/watch?v=u0FyfP6bnLY",
+      skill:
+        "React, Redux, Spring, Spring Security, Axios, StyledComponent, react-bootstrap, JavaScript, CSS, HTML, Java, MySQL, Tomcat, Mybatis, Maven, lombok",
+    },
     {
       title: "Apple Clone",
       subtitle: "애플 홈페이지 클론 사이트",
@@ -23,8 +37,7 @@ const Project = () => {
         "리액트와 로컬스토리지로 구현한 간단한 쇼핑몰 데모 사이트로 제품 상세페이지에서 주문을 누르면 재고가 감소하고 주문목록으로 이동하며 각 주문된 목록의 갯수도 수정이 가능합니다. 또한, 로컬스토리지에 접속한 사용자가 본 상품의 번호를 기억해 최근 봤던 상품을 보여줄 수 있습니다.",
       src: "/images/project4.png",
       url: "https://padd60.github.io/React_ShoppingMall_Demo/",
-      skill:
-        "React, Redux, Saas, react-bootstrap, JavaScript, jQuery, CSS, HTML",
+      skill: "React, Redux, Saas, react-bootstrap, JavaScript, CSS, HTML",
     },
     {
       title: "학사관리 SW",
@@ -55,7 +68,7 @@ const Project = () => {
     },
   ];
 
-  let [detailIndex, SetdetailIndex] = useState(4);
+  let [detailIndex, SetdetailIndex] = useState(0);
 
   // styled components
   let Divide = styled("div")`
@@ -117,6 +130,9 @@ const Project = () => {
       </div>
       <Divide />
       <div className="container-lg">
+        <div style={{ padding: "50px 0", fontSize: "32px" }}>
+          프로젝트 리스트
+        </div>
         <div className="row">
           {!projectInfo
             ? null

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/Skill.css";
 import styled from "styled-components";
 import { FaReact, FaCss3, FaJava, FaBootstrap } from "react-icons/fa";
@@ -43,6 +43,10 @@ let SkillName = styled("p")`
 `;
 
 const Skill = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <div>
       <Navbar className="navbar" variant="light" expand="lg" sticky="top">

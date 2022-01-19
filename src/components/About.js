@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./css/About.css";
 import {
@@ -153,6 +153,10 @@ let StackBar = styled("span")`
 `;
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   let [circleNum, circleNumChange] = useState(0);
   let [circleNum2, circleNumChange2] = useState(0);
   let [circleNum3, circleNumChange3] = useState(0);
@@ -425,12 +429,12 @@ const About = () => {
               <ProjectImg
                 id="projectImg"
                 onClick={() => {
-                  window.open("https://padd60.github.io/FashionApp_project/");
+                  window.open("https://www.youtube.com/watch?v=u0FyfP6bnLY");
                 }}
               >
                 <img
-                  src={process.env.PUBLIC_URL + "/images/project1.png"}
-                  alt="pjImg1"
+                  src={process.env.PUBLIC_URL + "/images/project6.png"}
+                  alt="pjImg4"
                   style={{
                     display: "block",
                     width: "100%",
@@ -440,78 +444,31 @@ const About = () => {
                 ></img>
               </ProjectImg>
               <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
-              <StackBar>Html</StackBar>
-              <StackBar>CSS</StackBar>
-              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
-              <StackBar>jQuery</StackBar>
+              <div
+                style={{
+                  marginBottom: "20px",
+                  marginLeft: "10px",
+                  display: "flex",
+                  flexFlow: "row wrap",
+                }}
+              >
+                <StackBar>React</StackBar>
+                <StackBar>Redux</StackBar>
+                <StackBar>Spring</StackBar>
+                <StackBar style={{ width: "130px" }}>Spring Security</StackBar>
+                <StackBar style={{ width: "130px" }}>react-bootstrap</StackBar>
+                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+                <StackBar>Axios</StackBar>
+                <StackBar style={{ width: "130px" }}>StyledComponent</StackBar>
+                <StackBar>Java</StackBar>
+                <StackBar>MySQL</StackBar>
+              </div>
             </ProjectBox>
             <Line />
           </div>
           <div
             id="Project2"
-            className="col d-flex justify-content-end align-items-center"
-          >
-            <Line />
-            <ProjectBox>
-              <ProjectImg
-                id="projectImg"
-                onClick={() => {
-                  window.open(
-                    "https://padd60.github.io/js-crome-app-momentum-/"
-                  );
-                }}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "/images/project2.png"}
-                  alt="pjImg2"
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    borderRadius: "20px",
-                    cursor: "pointer",
-                  }}
-                ></img>
-              </ProjectImg>
-              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
-              <StackBar>Html</StackBar>
-              <StackBar>CSS</StackBar>
-              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
-              <StackBar style={{ width: "90px" }}>Open API</StackBar>
-            </ProjectBox>
-          </div>
-          <div
-            id="Project3"
             className="col d-flex justify-content-start align-items-center"
-          >
-            <ProjectBox>
-              <ProjectImg
-                id="projectImg"
-                onClick={() => {
-                  window.open("https://padd60.github.io/Apple_Demo_Site/");
-                }}
-              >
-                <img
-                  src={process.env.PUBLIC_URL + "/images/project5.png"}
-                  alt="pjImg5"
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    borderRadius: "20px",
-                    cursor: "pointer",
-                  }}
-                ></img>
-              </ProjectImg>
-              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
-              <StackBar>HTML</StackBar>
-              <StackBar>CSS</StackBar>
-              <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
-              <StackBar style={{ width: "90px" }}>Bootstrap</StackBar>
-            </ProjectBox>
-            <Line />
-          </div>
-          <div
-            id="Project4"
-            className="col d-flex justify-content-end align-items-center"
           >
             <Line />
             <ProjectBox>
@@ -535,14 +492,101 @@ const About = () => {
                 ></img>
               </ProjectImg>
               <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
-              <div style={{ marginBottom: "20px" }}>
-                <StackBar>HTML</StackBar>
-                <StackBar>CSS</StackBar>
-                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+              <div
+                style={{
+                  marginBottom: "20px",
+                  marginLeft: "10px",
+                  display: "flex",
+                  flexFlow: "row wrap",
+                }}
+              >
                 <StackBar>React</StackBar>
                 <StackBar>Redux</StackBar>
-                <StackBar>Sass</StackBar>
                 <StackBar style={{ width: "130px" }}>react-bootstrap</StackBar>
+                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+                <StackBar>CSS</StackBar>
+                <StackBar>HTML</StackBar>
+                <StackBar>Sass</StackBar>
+              </div>
+            </ProjectBox>
+          </div>
+          <div
+            id="Project3"
+            className="col d-flex justify-content-start align-items-center"
+          >
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open(
+                    "https://padd60.github.io/js-crome-app-momentum-/"
+                  );
+                }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/images/project2.png"}
+                  alt="pjImg2"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <div
+                style={{
+                  marginBottom: "20px",
+                  marginLeft: "10px",
+                  display: "flex",
+                  flexFlow: "row wrap",
+                }}
+              >
+                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+                <StackBar>CSS</StackBar>
+                <StackBar>Html</StackBar>
+                <StackBar style={{ width: "90px" }}>Open API</StackBar>
+              </div>
+            </ProjectBox>
+            <Line />
+          </div>
+          <div
+            id="Project4"
+            className="col d-flex justify-content-end align-items-center"
+          >
+            <Line />
+            <ProjectBox>
+              <ProjectImg
+                id="projectImg"
+                onClick={() => {
+                  window.open("https://padd60.github.io/FashionApp_project/");
+                }}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/images/project1.png"}
+                  alt="pjImg1"
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                  }}
+                ></img>
+              </ProjectImg>
+              <p style={{ margin: "10px 0" }}>사용 기술 스택</p>
+              <div
+                style={{
+                  marginBottom: "20px",
+                  marginLeft: "10px",
+                  display: "flex",
+                  flexFlow: "row wrap",
+                }}
+              >
+                <StackBar style={{ width: "90px" }}>JavaScript</StackBar>
+                <StackBar>jQuery</StackBar>
+                <StackBar>CSS</StackBar>
+                <StackBar>Html</StackBar>
               </div>
             </ProjectBox>
           </div>
@@ -609,6 +653,16 @@ const About = () => {
             새롭게 알게된 지식을 공유하거나 배운 내용을 복습하기 위한 글 위주로
             기술되어 있습니다.
           </div>
+          <div className="col-12">
+            <span
+              style={{
+                borderBottom: "1px solid #FC5185",
+                paddingBottom: "10px",
+              }}
+            >
+              블로그를 방문하고 싶으시다면 위 로고나 제목을 클릭해주세요! 👆
+            </span>
+          </div>
         </div>
       </div>
 
@@ -658,6 +712,16 @@ const About = () => {
           </div>
           <div className="col-12">
             또한, 가능하면 커밋을 자주하려고 노력하고 있습니다.
+          </div>
+          <div className="col-12">
+            <span
+              style={{
+                borderBottom: "1px solid #FC5185",
+                paddingBottom: "10px",
+              }}
+            >
+              깃허브를 방문하고 싶으시다면 위 로고나 제목을 클릭해주세요! 👆
+            </span>
           </div>
         </div>
       </div>
