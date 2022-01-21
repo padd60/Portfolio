@@ -114,12 +114,6 @@ let ProjectImg = styled("div")`
   align-items: center;
 `;
 
-let Line = styled("div")`
-  background-color: #364f6b;
-  width: 27%;
-  height: 5px;
-`;
-
 let MoreButton = styled("button")`
   width: 100px;
   height: 40px;
@@ -138,8 +132,8 @@ let TopBtn = styled("button")`
   background-color: transparent;
   color: #3fc1c9;
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 5%;
+  right: 3%;
   font-size: 38px;
 `;
 
@@ -304,15 +298,15 @@ const About = () => {
           <div className="col-10">
             <InfoMain>
               사용자와 인터페이스에서 직접 상호작용하며 화면을 설계해나가는
-              프론트엔드에 관심이 많은 김정환입니다. 트렌디하게 변 화하는시장과
+              프론트엔드에 관심이 많은 김정환입니다. 트렌디하게 변화하는 시장과
               그에 맞추어 발 빠르게 적용되는 최신기술이 모여있는 IT산업에 대한
-              관심이 커져 개발자로 진로로 정하게되 었습니다. 제일 매료되었던
+              관심이 커져 개발자로 진로를 정하게 되었습니다. 제일 매료되었던
               점은 시장에서 한단계 더 성장할 수 있는 신기술과 기술공유가
               활발하게 이루어져 개인이 성장할 기회가 얼마든지 있고 또 회사의
               성장과도 직결될 수 있다는 점입니다. 특히 평소에 소통하는 것을
               좋아하고 무언가를 만드는 일에 흥미를 느껴서 자연스럽게
               개발분야에서도 사용자와의 접점이 많고 프로젝트에서도 디자인,
-              백엔드 팀과 소통을 많이 하 게 되는 프론트엔드 개발자에 눈길이 갔고
+              백엔드 팀과 소통을 많이 하게 되는 프론트엔드 개발자에 눈길이 갔고
               그개발을 하면서 바로 사용자의 입장에서 UI를 조작, 확인하며 코드를
               작성할 수 있 다는 점이 줄곧 사용자의 입장에서만 있었던 저에게
               신선하게 다가와 상세 진로를 프론트엔드 개발자로 정하게 되었습니다.
