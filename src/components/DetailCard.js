@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import styled from "styled-components";
 
 const DetailCard = (props) => {
   let ShowDetail = styled("div")`
-    font-size: 30px;
+    font-size: ${(props) => props.fontFix};
     text-align: left;
   `;
 
@@ -13,6 +13,34 @@ const DetailCard = (props) => {
   `;
 
   let DetailBody = styled("span")``;
+
+  let [fontFix, SetfontFix] = useState("30px");
+
+  useEffect(() => {
+    let currentWidth = document.documentElement.offsetWidth;
+    if (currentWidth < 600) {
+      SetfontFix("1rem");
+    } else if (currentWidth >= 600) {
+      SetfontFix("30px");
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => {
+        let currentWidth = document.documentElement.offsetWidth;
+        if (currentWidth <= 600) {
+          SetfontFix("1rem");
+        }
+
+        if (currentWidth > 600) {
+          SetfontFix("30px");
+        }
+      },
+      [fontFix]
+    );
+  });
 
   return (
     <div className="col-12">
@@ -29,11 +57,11 @@ const DetailCard = (props) => {
       />
       <div className="container" style={{ marginBottom: "30px" }}>
         <div className="row justify-content-center">
-          <ShowDetail className="col-lg-3">
+          <ShowDetail className="col-lg-3" fontFix={fontFix}>
             <DetailHead>프로젝트 명 : </DetailHead>
           </ShowDetail>
 
-          <ShowDetail className="col-lg-7">
+          <ShowDetail className="col-lg-7" fontFix={fontFix}>
             <DetailBody>
               {props.projectInfo ? props.projectInfo.title : null}
             </DetailBody>
@@ -42,11 +70,11 @@ const DetailCard = (props) => {
       </div>
       <div className="container" style={{ marginBottom: "30px" }}>
         <div className="row justify-content-center">
-          <ShowDetail className="col-lg-3">
+          <ShowDetail className="col-lg-3" fontFix={fontFix}>
             <DetailHead>프로젝트 내용 : </DetailHead>
           </ShowDetail>
 
-          <ShowDetail className="col-lg-7">
+          <ShowDetail className="col-lg-7" fontFix={fontFix}>
             <DetailBody>
               {props.projectInfo ? props.projectInfo.content : null}
             </DetailBody>
@@ -55,11 +83,11 @@ const DetailCard = (props) => {
       </div>
       <div className="container" style={{ marginBottom: "30px" }}>
         <div className="row justify-content-center">
-          <ShowDetail className="col-lg-3">
+          <ShowDetail className="col-lg-3" fontFix={fontFix}>
             <DetailHead>프로젝트 적용기술 : </DetailHead>
           </ShowDetail>
 
-          <ShowDetail className="col-lg-7">
+          <ShowDetail className="col-lg-7" fontFix={fontFix}>
             <DetailBody>
               {props.projectInfo ? props.projectInfo.skill : null}
             </DetailBody>
@@ -70,7 +98,7 @@ const DetailCard = (props) => {
         style={{
           backgroundColor: "#F6416C",
           borderStyle: "none",
-          fontSize: "30px",
+          fontSize: fontFix,
         }}
         onClick={() => {
           window.open(props.projectInfo.url);

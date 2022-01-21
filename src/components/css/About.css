@@ -62,3 +62,25 @@
     background-color: #364f6b;
   }
 }
+
+@media screen and (width <= 600px) {
+  #Project1::after {
+    content: "";
+    display: none;
+  }
+
+  #Project2::before {
+    content: "";
+    display: none;
+  }
+
+  #Project3::after {
+    content: "";
+    display: none;
+  }
+
+  #Project4::before {
+    content: "";
+    display: none;
+  }
+}
