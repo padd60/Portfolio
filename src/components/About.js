@@ -96,16 +96,16 @@ let SkillBox = styled("div")`
 `;
 
 let ProjectBox = styled("div")`
-  width: 400px;
-  min-height: 300px;
+  /* width: 400px; */
+  /* min-height: 300px; */
   border: 3px solid #364f6b;
   border-radius: 20px;
   margin: 50px 0px;
 `;
 
 let ProjectImg = styled("div")`
-  width: 360px;
-  min-height: 200px;
+  /* width: 360px; */
+  /* min-height: 200px; */
   margin: 5px auto;
   border: 1px solid #364f6b;
   background-color: #364f6b;
@@ -181,9 +181,9 @@ const About = () => {
     // console.log(scroll);
 
     if (scroll >= 1100) {
-      circleNumChange(65);
-      circleNumChange2(75);
-      circleNumChange3(70);
+      circleNumChange(50);
+      circleNumChange2(60);
+      circleNumChange3(60);
     }
 
     if (scroll < 1100) {
@@ -271,12 +271,12 @@ const About = () => {
             </div>
             <Greet className="col-lg-8">
               <h2 style={{ color: "#71DFE7" }}>안녕하세요 🙌</h2>
-              <h4>T자형 개발지식을 {Br} 기르기 위해</h4>
-              <h4>꾸준한 배움을 {Br} 지향하는</h4>
-              <h4>
+              <h5>T자형 개발지식을 {Br} 기르기 위해</h5>
+              <h5>꾸준한 배움을 {Br} 지향하는</h5>
+              <h5>
                 프론트엔드 개발자 {Br}
                 <Strong>김정환</Strong>입니다.
-              </h4>
+              </h5>
             </Greet>
           </div>
         </ProfileBox>
@@ -453,10 +453,11 @@ const About = () => {
 
       <div className="container-lg BoxPadding" name="project">
         <Title>Project</Title>
-        <div className="row align-items-center">
+        <div className="row d-flex align-items-center justify-content-between">
           <div
             id="Project1"
-            className="col d-flex justify-content-start align-items-center"
+            className="col-lg-6 d-flex align-items-center"
+            style={{ padding: "10px 30px" }}
           >
             <ProjectBox>
               <ProjectImg
@@ -497,13 +498,12 @@ const About = () => {
                 <StackBar>MySQL</StackBar>
               </div>
             </ProjectBox>
-            {profilewidth === "150px" ? null : <Line />}
           </div>
           <div
             id="Project2"
-            className="col d-flex justify-content-start align-items-center"
+            className="col-lg-6 d-flex align-items-center"
+            style={{ padding: "10px 30px" }}
           >
-            {profilewidth === "150px" ? null : <Line />}
             <ProjectBox>
               <ProjectImg
                 id="projectImg"
@@ -543,9 +543,12 @@ const About = () => {
               </div>
             </ProjectBox>
           </div>
+        </div>
+        <div className="row d-flex align-items-center justify-content-between">
           <div
             id="Project3"
-            className="col d-flex justify-content-start align-items-center"
+            className="col-lg-6 d-flex align-items-center"
+            style={{ padding: "10px 30px" }}
           >
             <ProjectBox>
               <ProjectImg
@@ -582,13 +585,12 @@ const About = () => {
                 <StackBar style={{ width: "90px" }}>Open API</StackBar>
               </div>
             </ProjectBox>
-            {profilewidth === "150px" ? null : <Line />}
           </div>
           <div
             id="Project4"
-            className="col d-flex justify-content-end align-items-center"
+            className="col-lg-6 d-flex align-items-center"
+            style={{ padding: "10px 30px" }}
           >
-            {profilewidth === "150px" ? null : <Line />}
             <ProjectBox>
               <ProjectImg
                 id="projectImg"
@@ -624,6 +626,7 @@ const About = () => {
             </ProjectBox>
           </div>
         </div>
+
         <div>
           <FiMoreVertical style={{ fontSize: "35px", margin: "20px 0" }} />
         </div>
