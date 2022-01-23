@@ -196,23 +196,19 @@ const About = () => {
   });
 
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => {
-        let currentWidth = document.documentElement.offsetWidth;
-        if (currentWidth <= 600) {
-          Setprofilewidth("150px");
-          SetBr(<br />);
-        }
+    window.addEventListener("resize", () => {
+      let currentWidth = document.documentElement.offsetWidth;
+      if (currentWidth <= 600) {
+        Setprofilewidth("150px");
+        SetBr(<br />);
+      }
 
-        if (currentWidth > 600) {
-          Setprofilewidth("300px");
-          SetBr(null);
-        }
-      },
-      [profilewidth, Br]
-    );
-  });
+      if (currentWidth > 600) {
+        Setprofilewidth("300px");
+        SetBr(null);
+      }
+    });
+  }, [profilewidth, Br]);
 
   let navigate = useNavigate();
 

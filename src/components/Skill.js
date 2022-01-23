@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Skill.css";
 import styled from "styled-components";
 import { FaReact, FaCss3, FaJava, FaBootstrap } from "react-icons/fa";
@@ -43,9 +43,36 @@ let SkillName = styled("p")`
 `;
 
 const Skill = () => {
+  let [imageFix, Setimagefix] = useState("150px");
+  let [textFontFix, SettextFontfix] = useState("20px");
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    let currentWidth = document.documentElement.offsetWidth;
+    if (currentWidth < 600) {
+      Setimagefix(null);
+      SettextFontfix("14px");
+    } else if (currentWidth >= 600) {
+      Setimagefix("150px");
+      SettextFontfix("20px");
+    }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      let currentWidth = document.documentElement.offsetWidth;
+      if (currentWidth < 600) {
+        Setimagefix(null);
+        SettextFontfix("14px");
+      }
+
+      if (currentWidth >= 600) {
+        Setimagefix("150px");
+        SettextFontfix("20px");
+      }
+    });
+  }, [imageFix, textFontFix]);
 
   return (
     <div>
@@ -333,7 +360,7 @@ const Skill = () => {
           >
             <div className="col-4">
               <SiStyledcomponents
-                size="150px"
+                size={imageFix}
                 style={{
                   fontSize: "100px",
                   fontWeight: "bold",
@@ -345,7 +372,7 @@ const Skill = () => {
                   style={{
                     borderTop: "2px solid #404040",
                     padding: "10px 0",
-                    fontSize: "20px",
+                    fontSize: textFontFix,
                   }}
                 >
                   Styledcomponents
