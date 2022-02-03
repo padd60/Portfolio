@@ -15,13 +15,16 @@ const DetailCard = (props) => {
   let DetailBody = styled("span")``;
 
   let [fontFix, SetfontFix] = useState("30px");
+  let [fontFix2, SetfontFix2] = useState("20px");
 
   useEffect(() => {
     let currentWidth = document.documentElement.offsetWidth;
     if (currentWidth < 600) {
       SetfontFix("1rem");
+      SetfontFix2("1rem");
     } else if (currentWidth >= 600) {
       SetfontFix("30px");
+      SetfontFix2("20px");
     }
   }, []);
 
@@ -32,13 +35,15 @@ const DetailCard = (props) => {
         let currentWidth = document.documentElement.offsetWidth;
         if (currentWidth <= 600) {
           SetfontFix("1rem");
+          SetfontFix2("1rem");
         }
 
         if (currentWidth > 600) {
           SetfontFix("30px");
+          SetfontFix2("20px");
         }
       },
-      [fontFix]
+      [fontFix, fontFix2]
     );
   });
 
@@ -74,7 +79,7 @@ const DetailCard = (props) => {
             <DetailHead>프로젝트 내용 : </DetailHead>
           </ShowDetail>
 
-          <ShowDetail className="col-lg-7" fontFix={fontFix}>
+          <ShowDetail className="col-lg-7" fontFix={fontFix2}>
             <DetailBody>
               {props.projectInfo ? props.projectInfo.content : null}
             </DetailBody>
